@@ -10,6 +10,9 @@
             #h1 {
                 text-align: center;
             }
+            #x {
+                background-color: #b3f0ff ;
+            }
             .b {
                 padding: 25px;
                 background-color: #f0f5f5;
@@ -46,7 +49,7 @@
                 <th><button class="b" id="C"  onclick="val(document.querySelector('input'),this.innerText)">C</button></th>
                 <th><button class="b" id="("  onclick="val(document.querySelector('input'),this.innerText)">(</button></th>
                 <th><button class="b" id=")"  onclick="val(document.querySelector('input'),this.innerText)">)</button></th>
-                <th><button class="b" id="^"  onclick="val(document.querySelector('input'),'**')">^</button></th>
+                <th><button class="b" id="x"  onclick="val(document.querySelector('input'),'bs')"><b>&larr;</b></button></th>
             </tr>
             <tr class="tr">
                 <th><button class="b" id="b1"  onclick="val(document.querySelector('input'),this.innerText)">1</button></th>
@@ -75,8 +78,11 @@
         </table>
         <script>
             function val(x,y){
-                if(y!="C"){
+                if(y!="C" && y!="bs"){
                     x.value+=y;
+                }else if(y=="bs"){
+                    var t = x.value.slice(0,-1);
+                    x.value = t;
                 }else{
                     x.value = "";
                 }
