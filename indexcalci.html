@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+    <head>
+        <title>mycalci.com</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta name="Devloper" content="Avinash">
+        <meta name="keywords" content="Calcultor,Online Calculator">
+        <style>
+            .b {
+                padding: 25px;
+                background-color: #f0f5f5;
+            }
+            #d1 {
+                border: 1px solid black;
+                background-color: white ;
+            }
+            .tr{
+                height:50px;
+                background-color: white;
+                border: 1px solid black;
+            }
+            .b:hover {
+                background-color: #a3c2c2;
+            }
+            #C {
+                background-color: #ff4d4d;
+            }
+            #eq {
+                background-color: #80ff80;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Welcome to Online Calculator!!</h1>
+        <table id="d1">
+            <caption><b>Calculator</b></caption>
+            <tr id="tr1" class="tr">
+                <th colspan="4"><input id="1" type="text" size=30 value=""></th>
+            </tr>
+            <tr class="tr">
+                <th><button class="b" id="C"  onclick="val(document.querySelector('input'),this.innerText)">C</button></th>
+                <th><button class="b" id="("  onclick="val(document.querySelector('input'),this.innerText)">(</button></th>
+                <th><button class="b" id=")"  onclick="val(document.querySelector('input'),this.innerText)">)</button></th>
+                <th><button class="b" id="^"  onclick="val(document.querySelector('input'),'**')">^</button></th>
+            </tr>
+            <tr class="tr">
+                <th><button class="b" id="b1"  onclick="val(document.querySelector('input'),this.innerText)">1</button></th>
+                <th><button class="b" id="b2"  onclick="val(document.querySelector('input'),this.innerText)">2</button></th>
+                <th><button class="b" id="b3"  onclick="val(document.querySelector('input'),this.innerText)">3</button></th>
+                <th><button class="b" id="+"   onclick="val(document.querySelector('input'),this.innerText)">+</button></th>
+            </tr>
+            <tr class="tr">
+                <th><button class="b" id="b4"  onclick="val(document.querySelector('input'),this.innerText)">4</button></th>
+                <th><button class="b" id="b5"  onclick="val(document.querySelector('input'),this.innerText)">5</button></th>
+                <th><button class="b" id="b6"  onclick="val(document.querySelector('input'),this.innerText)">6</button></th>
+                <th><button class="b" id="-"   onclick="val(document.querySelector('input'),this.innerText)">-</button></th>
+            </tr>
+            <tr class="tr">
+                <th><button class="b" id="b7"  onclick="val(document.querySelector('input'),this.innerText)">7</button></th>
+                <th><button class="b" id="b8"  onclick="val(document.querySelector('input'),this.innerText)">8</button></th>
+                <th><button class="b" id="b9"  onclick="val(document.querySelector('input'),this.innerText)">9</button></th>
+                <th><button class="b" id="*"   onclick="val(document.querySelector('input'),this.innerText)">*</button></th>
+            </tr>
+            <tr class="tr">
+                <th><button class="b" id="b0"  onclick="val(document.querySelector('input'),this.innerText)">0</button></th>
+                <th><button class="b" id="."   onclick="val(document.querySelector('input'),this.innerText)">.</button></th>
+                <th><button class="b" id="/"   onclick="val(document.querySelector('input'),this.innerText)">/</button></th>
+                <th><button class="b" id="eq"   onclick="cal()">=</button></th>
+            </tr>
+        </table>
+        <script>
+            function val(x,y){
+                if(y!="C"){
+                    x.value+=y;
+                }else{
+                    x.value = "";
+                }
+            };
+          
+            function cal(){
+                var v = document.querySelector("input");
+                var z = v.value;
+                v.value= eval(z);
+            }
+        </script>
+    </body>
+</html>
